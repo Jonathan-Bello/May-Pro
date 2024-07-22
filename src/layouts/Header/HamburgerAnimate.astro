@@ -1,0 +1,57 @@
+---
+type Props = {
+  bgColor: string;
+  color: string;
+};
+
+const { bgColor, color } = Astro.props;
+---
+
+<button id="hamburger-btn" class="relative group overflow-hidden">
+  <div
+    class={`relative flex overflow-visible items-center justify-center w-[32px] h-[32px]
+    transform transition-all ${bgColor}`}
+  >
+    <div
+      class="flex flex-col justify-between w-[24px] h-[24px] transform transition-all duration-300 origin-center overflow-hidden"
+    >
+      <div
+        class={`${color} h-[2px] w-2 transform transition-all duration-300 origin-left group-[.actived]:translate-x-10`}
+      >
+      </div>
+      <div
+        class={`${color} h-[2px] w-4 transform transition-all duration-300 group-[.actived]:translate-x-10 delay-75`}
+      >
+      </div>
+      <div
+        class={`${color} h-[2px] w-6 transform transition-all duration-300 origin-left group-[.actived]:translate-x-10 delay-150`}
+      >
+      </div>
+
+      <div
+        class="absolute items-center justify-between transform
+        transition-all duration-500 top-3 -translate-x-10
+        group-[.actived]:translate-x-0 flex w-0 group-[.actived]:w-6"
+      >
+        <div
+          class={`absolute ${color} h-[2px] w-6
+          transform transition-all duration-500 rotate-0 delay-300 group-[.actived]:rotate-45`}
+        >
+        </div>
+        <div
+          class={`absolute ${color} h-[2px] w-6
+          transform transition-all duration-500 -rotate-0 delay-300 group-[.actived]:-rotate-45`}
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</button>
+
+<script>
+  const btnHamburger = document.getElementById("hamburger-btn");
+
+  btnHamburger?.addEventListener("click", () => {
+    btnHamburger.classList.toggle("actived");
+  });
+</script>

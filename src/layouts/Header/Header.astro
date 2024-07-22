@@ -1,0 +1,109 @@
+---
+import "remixicon/fonts/remixicon.css";
+import NavLink from "./NavLink.astro";
+import logo from "@/assets/svg/logo-may-pro.svg";
+import HamburgerAnimate from "./HamburgerAnimate.astro";
+
+type Props = {};
+
+const {} = Astro.props;
+---
+
+<header
+  id="header"
+  class={`w-full bg-system-bgHeader shadow-md
+    fixed top-0 z-30
+    transition-colors delay-300 ease-out
+    lg:transition-none`}
+>
+  <div
+    class="relative flex justify-center items-center container p-4 lg:py-8 lg:px-0 mx-auto gap-4"
+  >
+    <div id="menu-btn" class="flex lg:hidden">
+      <HamburgerAnimate bgColor="bg-trasparent" color="bg-grey-1" />
+    </div>
+
+    <nav
+      id="nav-menu"
+      class={`absolute container px-4 z-10 w-[100vw]
+      bg-system-bgHeader lg:bg-transparent shadow-md lg:shadow-none
+      transition-all delay-300 ease-out
+      lg:transition-none
+      top-[-100vh] lg:top-auto
+      lg:static lg:flex lg:h-full lg:flex-1
+      `}
+    >
+      <ul
+        class="flex flex-col lg:flex-row items-start justify-start lg:justify-end
+        w-full py-12 lg:pr-4 lg:py-0 gap-10"
+      >
+        <NavLink url={"/"} text={"Inicio"} />
+        <NavLink url={"/productos"} text={"Productos"} />
+        <NavLink url={"/nosotros"} text={"Nosotros"} />
+        <NavLink url={"/contacto"} text={"Contacto"} />
+      </ul>
+    </nav>
+
+    <div class="flex justify-start flex-grow lg:flex-grow-0 lg:-order-1">
+      <a href="/">
+        <img src={logo.src} alt="logo mobile" class="max-w-44" />
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <a href="#" target="_blank">
+        <div
+          class="bg-primary-3 flex items-center justify-center size-8 rounded-full p-1"
+        >
+          <i class="ri-instagram-fill lg:text-lg text-grey-6"></i>
+        </div>
+      </a>
+      <a href="#" target="_blank">
+        <div
+          class="bg-primary-3 flex items-center justify-center size-8 rounded-full p-1"
+        >
+          <i class="ri-facebook-fill lg:text-lg text-grey-6"></i>
+        </div>
+      </a>
+      <a href="#" target="_blank">
+        <div
+          class="bg-primary-3 flex items-center justify-center size-8 rounded-full p-1"
+        >
+          <i class="ri-linkedin-fill lg:text-lg text-grey-6"></i>
+        </div>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .blur-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px); /* Aplica el blur */
+    -webkit-backdrop-filter: blur(2px); /* Soporte para Safari */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const menuBtn = document.getElementById("menu-btn");
+    const header = document.getElementById("header");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuBtn &&
+      menuBtn.addEventListener("click", () => {
+        header?.classList.toggle("shadow-md");
+
+        // Clases que activan el mobile menu
+        navMenu?.classList.toggle("top-full");
+        navMenu?.classList.toggle("opacity-100");
+        navMenu?.classList.toggle("bg-opacity-80");
+      });
+  });
+</script>

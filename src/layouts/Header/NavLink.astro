@@ -1,0 +1,49 @@
+---
+type Props = {
+  url: string;
+  text: string;
+};
+
+const { url, text } = Astro.props;
+---
+
+<li class="text-grey-1 text-xl font-semibold">
+  <a id=`NavLink-${url}` href={url} class={` hover:text-primary-3`}>
+    {text}
+  </a>
+</li>
+
+<style>
+  a {
+    @apply relative no-underline text-grey-1;
+  }
+
+  a::after {
+    content: "";
+    @apply absolute lg:w-0 left-0 bottom-[-0.5rem] bg-primary-3;
+    height: 2px;
+    transition: width 0.3s ease;
+  }
+
+  a.selected {
+    @apply text-primary-3;
+  }
+
+  a:hover::after,
+  a.selected:hover::after {
+    width: 100%;
+  }
+
+  a.selected::after {
+    @apply w-1/2;
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const path = window.location.pathname;
+    const $link = document.getElementById(`NavLink-${path}`);
+    const urlLink = $link?.getAttribute("href");
+    path === urlLink && $link?.classList.toggle("selected");
+  });
+</script>
