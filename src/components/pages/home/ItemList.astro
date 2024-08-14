@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import svgDot from "@/assets/svg/customDot.svg";
+
+type Props = {
+  text: string;
+};
+
+const { text } = Astro.props;
+---
+
+<li class="flex gap-4 lg:gap-6 flex-1 w-full items-center justify-center">
+  <Image class="size-16 lg:size-20" src={svgDot} alt="dot" />
+  <span class="font-medium text-2xl lg:text-3xl min-w-40">
+    {text}
+  </span>
+</li>
+
+<style></style>

@@ -1,6 +1,52 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import imgBolsasCemento from "@/assets/img/home/marcoCemento.png";
+import ItemList from "@/components/pages/home/ItemList.astro";
 ---
 
-<Layout title="Welcome to Astro." />
+<Layout title="MAY-PRO Inicio">
+  <section class="w-full mb-10">
+    <video loop autoplay muted class="w-full">
+      <source
+        src="https://res.cloudinary.com/dpxxweszs/video/upload/v1721672222/HomeMobile_vpppvp.mp4"
+        media="(max-width: 640px)"
+      />
+      <source
+        src="https://res.cloudinary.com/dpxxweszs/video/upload/v1721672227/HomeDesk_pvsgqu.mp4"
+      />
+    </video>
+  </section>
+
+  <section class="px-4 lg:px-0 container flex flex-wrap flex-col md:flex-row">
+    <div
+      class="flex-1 lg:flex flex-col lg:justify-center basis-1/2 text-base lg:text-xl xl:text-2xl mb-6 md:mb-0 md:pr-8 lg:pr-16 [&>p>strong]:font-semibold"
+    >
+      <p class="mb-4">
+        Somos una <strong>empresa mexicana</strong> fabricante de materiales básicos
+        de construcción con <strong>más de 50 años de experiencia</strong>.
+      </p>
+      <p>
+        Ofrecemos una amplia variedad de <strong
+          >productos que simplifican los procesos de construcción</strong
+        > y cumplen con los <strong>más altos estándares de calidad</strong>.
+      </p>
+    </div>
+
+    <div class="flex-1 basis-1/2">
+      <Image
+        src={imgBolsasCemento}
+        alt="varias bolsas de cemento bien organizadas"
+      />
+    </div>
+
+    <div
+      class="flex flex-1 flex-col md:flex-row flex-wrap gap-16 items-center justify-center
+      px-4 py-8 lg:pt-16"
+    >
+      <ItemList text={"Rendimiento"} />
+      <ItemList text={"Protección"} />
+      <ItemList text={"Durabilidad"} />
+    </div>
+  </section>
+</Layout>
