@@ -1,16 +1,21 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import imgBolsasCemento from "@/assets/img/home/marcoCemento.png";
 import ItemList from "@/components/pages/home/ItemList.astro";
 import ProductCard from "@/components/ProductCard.astro";
+import FeatureCard from "@/components/FeatureCard.astro";
 
+import imgBolsasCemento from "@/assets/img/home/marcoCemento.png";
 import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
 import imgMorteros from "@/assets/img/products/mortero.webp";
 import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
 import imgEstuco from "@/assets/img/products/estuco.webp";
 import imgBgAdhesivos from "@/assets/img/products/bgAdhesivos.webp";
 import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
+
+import svgBricks from "@/assets/svg/svgBricks.svg";
+import svgSpeed from "@/assets/svg/svgSpeed.svg";
+import svgMateriales from "@/assets/svg/svgMateriales.svg";
 ---
 
 <Layout title="MAY-PRO Inicio">
@@ -32,11 +37,11 @@ import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
     <div
       class="flex-1 lg:flex flex-col lg:justify-center basis-1/2 text-base lg:text-xl xl:text-2xl mb-6 md:mb-0 md:pr-8 lg:pr-16 [&>p>strong]:font-semibold"
     >
-      <p class="mb-4">
+      <p class="mb-4 text-grey-1">
         Somos una <strong>empresa mexicana</strong> fabricante de materiales básicos
         de construcción con <strong>más de 50 años de experiencia</strong>.
       </p>
-      <p>
+      <p class="text-grey-1">
         Ofrecemos una amplia variedad de <strong
           >productos que simplifican los procesos de construcción</strong
         > y cumplen con los <strong>más altos estándares de calidad</strong>.
@@ -60,7 +65,7 @@ import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
     </div>
   </section>
 
-  <section class="px-4 lg:px-0 container flex flex-col">
+  <section class="px-4 lg:px-0 container flex flex-col mb-14 md:mb-20 lg:mb-48">
     <h2
       class="text-grey-1 text-center font-title font-normal text-4xl lg:text-6xl mb-4 lg:mb-8"
     >
@@ -94,4 +99,34 @@ import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
       />
     </div>
   </section>
+
+  <section class="px-4 lg:px-0 container flex flex-col">
+    <h2
+      class="text-grey-1 text-end font-title font-normal text-2xl lg:text-4xl lg:text-[40px]
+      mb-8 lg:mb-8 lg:max-w-lg xl:max-w-xl self-end"
+    >
+      Tu aliado para simplificar tus proyectos de construcción
+    </h2>
+
+    <div
+      class="grid grid-cols-1 justify-items-center lg:grid-cols-3 gap-8 lg:gap-5"
+    >
+      <FeatureCard
+        title="Acabados profesionales y de alta durabilidad"
+        image={svgBricks}
+      />
+      <FeatureCard
+        title="Incrementa la velocidad de la construcción"
+        image={svgSpeed}
+      />
+      <FeatureCard
+        title="Materiales especializados con fácil manejabilidad y aplicación"
+        image={svgMateriales}
+      />
+    </div>
+  </section>
+
+  <br />
+  <br />
+  <br />
 </Layout>

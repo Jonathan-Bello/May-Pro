@@ -1,0 +1,28 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  image: ImageMetadata;
+}
+
+const { title, image } = Astro.props;
+---
+
+<article
+  class="relative flex flex-col items-center justify-end
+  lg:w-full
+  after:content-[''] after:inline-block after:absolute after:-bottom-2
+  after:h-px after:w-full after:bg-grey-4 last:after:w-0
+  lg:after:h-3/4 lg:after:w-px lg:after:-right-0 lg:after:top-1/2 lg:after:transform lg:after:-translate-y-1/2"
+>
+  <Image class="mb-4 w-64 sm:w-72 lg:w-80" src={image} alt={title} />
+  <h3
+    class="absolute top-[60%] sm:top-[62%] text-center text-base lg:text-xl xl:text-2xl font-medium text-grey-1"
+  >
+    {title}
+  </h3>
+</article>
+
+<style></style>
