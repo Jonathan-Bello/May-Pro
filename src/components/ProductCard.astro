@@ -1,0 +1,31 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  imgBg: ImageMetadata;
+  imgProduct: ImageMetadata;
+  href: string;
+}
+
+const { imgBg, title, imgProduct, href } = Astro.props;
+---
+
+<a href={href} class="relative flex items-center justify-end">
+  <div
+    class="w-full h-36 sm:h-40 absolute bottom-0
+    after:content-[''] after:inline-block after:absolute after:inset-0
+    after:bg-gradient-to-b after:from-transparent after:to-[#222222] after:w-full after:h-full after:bg-opacity-80 after:z-10"
+  >
+    <Image class="w-full h-full object-cover" src={imgBg} alt="background" />
+  </div>
+  <h3
+    class="absolute left-4 bottom-4 font-title text-xl sm:text-2xl font-medium text-grey-6 max-w-[75%] z-10"
+  >
+    {title}
+  </h3>
+  <Image class="z-10 w-24 my-12 mr-4" src={imgProduct} alt="img" />
+</a>
+
+<style></style>

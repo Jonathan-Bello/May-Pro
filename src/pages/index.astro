@@ -3,6 +3,10 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import imgBolsasCemento from "@/assets/img/home/marcoCemento.png";
 import ItemList from "@/components/pages/home/ItemList.astro";
+import ProductCard from "@/components/ProductCard.astro";
+
+import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
+import imgMorteros from "@/assets/img/products/mortero.webp";
 ---
 
 <Layout title="MAY-PRO Inicio">
@@ -18,7 +22,9 @@ import ItemList from "@/components/pages/home/ItemList.astro";
     </video>
   </section>
 
-  <section class="px-4 lg:px-0 container flex flex-wrap flex-col md:flex-row">
+  <section
+    class="px-4 lg:px-0 container flex flex-wrap flex-col md:flex-row mb-16"
+  >
     <div
       class="flex-1 lg:flex flex-col lg:justify-center basis-1/2 text-base lg:text-xl xl:text-2xl mb-6 md:mb-0 md:pr-8 lg:pr-16 [&>p>strong]:font-semibold"
     >
@@ -47,6 +53,35 @@ import ItemList from "@/components/pages/home/ItemList.astro";
       <ItemList text={"Rendimiento"} />
       <ItemList text={"Protección"} />
       <ItemList text={"Durabilidad"} />
+    </div>
+  </section>
+
+  <section class="px-4 lg:px-0 container flex flex-col">
+    <h2 class="text-center font-title text-4xl mb-4">Productos</h2>
+    <p class="text-center text-base mb-2">
+      Encuentra los materiales especializados y de alto desempeño ideales para
+      desarrollar tu proyecto.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      <ProductCard
+        title="Morteros secos premezclados"
+        imgBg={imgBgMorteros}
+        imgProduct={imgMorteros}
+        href="#"
+      />
+      <ProductCard
+        title="Morteros secos premezclados"
+        imgBg={imgBgMorteros}
+        imgProduct={imgMorteros}
+        href="#"
+      />
+      <ProductCard
+        title="Morteros secos premezclados"
+        imgBg={imgBgMorteros}
+        imgProduct={imgMorteros}
+        href="#"
+      />
     </div>
   </section>
 </Layout>
