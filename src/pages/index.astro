@@ -5,7 +5,8 @@ import ItemList from "@/components/pages/home/ItemList.astro";
 import ProductCard from "@/components/ProductCard.astro";
 import FeatureCard from "@/components/FeatureCard.astro";
 
-import imgBolsasCemento from "@/assets/img/home/marcoCemento.png";
+import imgBolsasCemento from "@/assets/img/home/marcoCemento.webp";
+import imgContacto from "@/assets/img/home/contacto.webp";
 import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
 import imgMorteros from "@/assets/img/products/mortero.webp";
 import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
@@ -16,6 +17,7 @@ import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
 import svgBricks from "@/assets/svg/svgBricks.svg";
 import svgSpeed from "@/assets/svg/svgSpeed.svg";
 import svgMateriales from "@/assets/svg/svgMateriales.svg";
+import ButtonCustom from "@/components/ButtonCustom.astro";
 ---
 
 <Layout title="MAY-PRO Inicio">
@@ -67,7 +69,7 @@ import svgMateriales from "@/assets/svg/svgMateriales.svg";
 
   <section class="px-4 lg:px-0 container flex flex-col mb-14 md:mb-20 lg:mb-48">
     <h2
-      class="text-grey-1 text-center font-title font-normal text-4xl lg:text-6xl mb-4 lg:mb-8"
+      class="font-title text-center text-grey-1 text-3xl lg:text-6xl lg:text-[4rem] mb-4 lg:mb-8"
     >
       Productos
     </h2>
@@ -100,7 +102,7 @@ import svgMateriales from "@/assets/svg/svgMateriales.svg";
     </div>
   </section>
 
-  <section class="px-4 lg:px-0 container flex flex-col">
+  <section class="px-4 lg:px-0 container flex flex-col mb-14 md:mb-20 lg:mb-48">
     <h2
       class="text-grey-1 text-end font-title font-normal text-2xl lg:text-4xl lg:text-[40px]
       mb-8 lg:mb-8 lg:max-w-lg xl:max-w-xl self-end"
@@ -126,7 +128,49 @@ import svgMateriales from "@/assets/svg/svgMateriales.svg";
     </div>
   </section>
 
-  <br />
-  <br />
-  <br />
+  <section
+    class="px-4 mb-16 lg:px-0
+    w-full flex justify-center overflow-hidden
+    lg:relative lg:border-grey-4 lg:border-y-2"
+  >
+    <div class="container lg:mt-24 lg:mb-16">
+      <div>
+        <h2
+          class="font-title text-grey-1 text-3xl lg:text-6xl lg:text-[4rem] mb-4 lg:mb-8"
+        >
+          Contacto
+        </h2>
+        <p
+          class="text-base lg:text-2xl text-grey-1 mb-10 lg:max-w-md xl:max-w-2xl"
+        >
+          Queremos escucharte y resolver tus dudas para que logres tu proyecto
+          tal y como lo has imaginado.
+        </p>
+
+        <ButtonCustom type="primary" text="Descargar fichas técnicas" />
+        <ButtonCustom type="secondary" text="Descargar fichas técnicas" />
+        <ButtonCustom type="primary" text="Descargar fichas" />
+        <ButtonCustom type="primary" text="Desc" />
+        <ButtonCustom type="secondary" text="Desc" />
+        <ButtonCustom type="primary" text="Contactanos" />
+        <ButtonCustom type="secondary" text="Contactanos" />
+      </div>
+    </div>
+
+    <Image
+      class="hidden lg:block lg:absolute right-0 lg:w-1/2 lg:h-full lg:object-cover lg:right-0 top-0"
+      src={imgContacto}
+      alt="hombre acomodando productos"
+    />
+  </section>
+
+  <section class="px-4 lg:px-0 container flex flex-col">
+    <h2
+      class="font-title text-center text-grey-1 text-3xl lg:text-6xl lg:text-[4rem] mb-4 lg:mb-8"
+    >
+      Algunos de nuestros clientes
+    </h2>
+
+    <br />
+  </section>
 </Layout>
