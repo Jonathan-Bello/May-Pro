@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import ItemList from "@/components/pages/home/ItemList.astro";
+import ProductCard from "@/components/ProductCard.astro";
+import FeatureCard from "@/components/FeatureCard.astro";
+
+import imgBolsasCemento from "@/assets/img/home/marcoCemento.webp";
+import imgContacto from "@/assets/img/home/contacto.webp";
+import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
+import imgMorteros from "@/assets/img/products/mortero.webp";
+import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
+import imgEstuco from "@/assets/img/products/estuco.webp";
+import imgBgAdhesivos from "@/assets/img/products/bgAdhesivos.webp";
+import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
+
+import svgBricks from "@/assets/svg/svgBricks.svg";
+import svgSpeed from "@/assets/svg/svgSpeed.svg";
+import svgMateriales from "@/assets/svg/svgMateriales.svg";
+import ButtonCustom from "@/components/ButtonCustom.astro";
+import CarouselClients from "@/components/CarouselClients.astro";
+import FormContacto from "@/components/pages/contacto/FormContacto.astro";
+---
+
+<Layout title="MAY-PRO Contacto">
+  <section
+    class="w-full h-svh mb-10 relative
+    after:content-[''] after:absolute after:bg-primary-1 after:mix-blend-multiply
+    after:w-full after:h-full after:top-0 after:left-0"
+  >
+    <Image
+      class="w-full h-full object-cover after:backdrop-blur"
+      src={imgContacto}
+      alt="banner"
+    />
+
+    <div
+      class="container px-4 py-8 w-full h-full
+     text-grey-6 absolute top-0 left-0 z-[1]
+     grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center"
+    >
+      <div class="mb-8">
+        <h1
+          class="font-title font-normal mb-4 text-4xl md:text-5xl lg:text-6xl"
+        >
+          Optimiza tus procesos de construcción con MAY-PRO
+        </h1>
+        <p class="text-base">
+          Escríbenos tus dudas y comentarios sobre nuestros productos, a través
+          del siguiente formulario
+        </p>
+      </div>
+
+      <FormContacto />
+    </div>
+  </section>
+</Layout>
