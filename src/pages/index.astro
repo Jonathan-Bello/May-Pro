@@ -129,7 +129,7 @@ import ButtonCustom from "@/components/ButtonCustom.astro";
   </section>
 
   <section
-    class="px-4 mb-16 lg:px-0
+    class="px-4 mb-16 lg:px-0 lg:mb-24
     w-full flex justify-center overflow-hidden
     lg:relative lg:border-grey-4 lg:border-y-2"
   >
@@ -147,13 +147,13 @@ import ButtonCustom from "@/components/ButtonCustom.astro";
           tal y como lo has imaginado.
         </p>
 
-        <ButtonCustom type="primary" text="Descargar fichas técnicas" />
-        <ButtonCustom type="secondary" text="Descargar fichas técnicas" />
-        <ButtonCustom type="primary" text="Descargar fichas" />
-        <ButtonCustom type="primary" text="Desc" />
-        <ButtonCustom type="secondary" text="Desc" />
-        <ButtonCustom type="primary" text="Contactanos" />
-        <ButtonCustom type="secondary" text="Contactanos" />
+        <a href="/contacto" class="inline-block">
+          <ButtonCustom
+            type="primary"
+            text="Contactanos"
+            iconClass="ri-phone-fill"
+          />
+        </a>
       </div>
     </div>
 

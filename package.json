@@ -2,6 +2,8 @@
   "name": "may-pro",
   "type": "module",
   "version": "0.0.1",
+  "author": "Jonathan Alexis Bello Lopez",
+  "license": "MIT",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,6 +15,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.12.2",
     "remixicon": "^4.3.0",
+    "swiper": "^11.1.9",
     "tailwindcss": "^3.4.6"
   }
 }

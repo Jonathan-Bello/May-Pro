@@ -2,48 +2,51 @@
 type Props = {
   type: "primary" | "secondary";
   text: string;
+  iconClass: string;
 };
 
-const { type, text } = Astro.props;
+const { type, text, iconClass } = Astro.props;
 ---
 
-<div
-  class:list={[
-    "parallelogramBtn inline-flex",
-    {
-      "bg-primary-4": type == "primary",
-      "bg-grey-6": type == "secondary",
-    },
-  ]}
->
-  <span
-    class:list={[
-      "pl-4 pr-2 py-3 inline-block text-base font-semibold z-10",
-      {
-        "text-grey-6": type == "primary",
-        "text-primary-4": type == "secondary",
-      },
-    ]}
-  >
-    {text}
-  </span>
+<div class="bgBorder inline-block">
   <div
     class:list={[
-      "parallelogram pl-4 pr-5 flex items-center justify-center",
+      "parallelogramBtn inline-flex",
       {
-        "bg-grey-6": type == "primary",
-        "bg-primary-4": type == "secondary",
+        "bg-primary-4": type == "primary",
+        "bg-grey-6": type == "secondary",
       },
     ]}
   >
-    <i
+    <span
       class:list={[
-        "ri-phone-fill text-2xl -rotate-[120deg]",
+        "pl-4 pr-2 py-3 inline-block text-base font-semibold z-10",
         {
-          "text-primary-4": type == "primary",
-          "text-grey-6": type == "secondary",
+          "text-grey-6": type == "primary",
+          "text-primary-4": type == "secondary",
         },
-      ]}></i>
+      ]}
+    >
+      {text}
+    </span>
+    <div
+      class:list={[
+        "parallelogram pl-4 pr-5 flex items-center justify-center",
+        {
+          "bg-grey-6": type == "primary",
+          "bg-primary-4": type == "secondary",
+        },
+      ]}
+    >
+      <i
+        class:list={[
+          `${iconClass} text-2xl -rotate-[120deg]`,
+          {
+            "text-primary-4": type == "primary",
+            "text-grey-6": type == "secondary",
+          },
+        ]}></i>
+    </div>
   </div>
 </div>
 
@@ -51,21 +54,15 @@ const { type, text } = Astro.props;
   .parallelogramBtn {
     position: relative;
     clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%);
-    box-shadow: black;
-    border: 4px solid blue;
+    /* border: 4px solid blue; */
   }
 
-  /* .parallelogramBtn::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(1% 3%, 98.5% 3%, 91% 98%, 1% 98%);
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: hidden;
-  } */
+  .bgBorder {
+    filter: drop-shadow(1px 0px 0px #d82227) drop-shadow(-1px 0px 0px #d82227)
+      drop-shadow(0px 1px 0px #d82227) drop-shadow(0px -1px 0px #d82227)
+      drop-shadow(1px 1px 0px #d82227) drop-shadow(-1px -1px 0px #d82227)
+      drop-shadow(-1px 1px 0px #d82227) drop-shadow(1px -1px 0px #d82227);
+  }
 
   .parallelogram {
     /* margin: 0.15rem 0 0.15rem 0rem; */
