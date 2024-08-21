@@ -1,55 +1,38 @@
 ---
 type Props = {
   id: string;
-  imagesList: Array<ImageMetadata>;
 };
+const { id } = Astro.props;
 
-const { id, imagesList } = Astro.props;
-
-import { RiCloseLargeLine } from "@remixicon/react";
 import { Image } from "astro:assets";
+
+import marcasList from "@/utils/marcasList";
 ---
 
 <section
   id={id}
-  class="modal hidden fixed z-40 inset-0
-  w-full h-full max-h-[100vh] min-h-0 min-w-0
-bg-grey-900 bg-opacity-80 justify-center items-center"
+  class="w-full h-full max-h-[100vh] min-h-0 min-w-0 overflow-hidden"
 >
-  <div class="container px-4 relative">
-    <RiCloseLargeLine
-      className="modal-close text-grey-50 size-10 absolute -top-14 right-4 hover:cursor-pointer z-50"
-    />
+  <div class="relative">
 
-    <div class="swiper categoriaSwiper !overflow-visible md:!overflow-hidden">
+    <div class="swiper categoriaSwiper !px-12">
       <div class="swiper-wrapper">
         {
-          imagesList.map((img) => (
+          marcasList.map((img) => (
             <div class="swiper-slide">
-              <article class="flex items-center justify-center md:px-16 md:h-[28rem]">
-                <Image
-                  class={"aspect-[16/11] max-w-2xl"}
-                  src={img}
-                  alt={"banner img"}
-                />
+              <article class="">
+                <Image class={""} src={img} alt={"banner img"} />
               </article>
             </div>
           ))
         }
       </div>
+    </div>
 
-      <div class="relative top-10 md:static">
-        <div
-          class="swiper-button-prev after:text-grey-50 after:content-['prev']"
-        >
-        </div>
-      </div>
-      <div class="relative top-10 md:static">
-        <div
-          class="swiper-button-next after:text-grey-50 after:content-['next']"
-        >
-        </div>
-      </div>
+    <div class="swiper-button-prev after:text-grey-1 after:content-['prev']">
+    </div>
+
+    <div class="swiper-button-next after:text-grey-1 after:content-['next']">
     </div>
   </div>
 </section>
@@ -70,23 +53,30 @@ bg-grey-900 bg-opacity-80 justify-center items-center"
     // import Swiper bundle with all modules installed
 
     new Swiper(".categoriaSwiper", {
-      slidesPerView: 1,
-      spaceBetween: 20,
+      slidesPerView: 2,
+      spaceBetween: 8,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-    });
-
-    const modal = document.querySelectorAll(".modal");
-    const closeIcons = document.querySelectorAll(".modal-close");
-
-    closeIcons.forEach((icon) => {
-      icon?.addEventListener("click", () => {
-        modal.forEach((e) => {
-          e.classList.remove("modal-active");
-        });
-      });
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 6,
+          spaceBetween: 30,
+        },
+        1280: {
+          slidesPerView: 7,
+          spaceBetween: 30,
+        }
+      },
     });
   });
 </script>

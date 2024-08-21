@@ -18,6 +18,7 @@ import svgBricks from "@/assets/svg/svgBricks.svg";
 import svgSpeed from "@/assets/svg/svgSpeed.svg";
 import svgMateriales from "@/assets/svg/svgMateriales.svg";
 import ButtonCustom from "@/components/ButtonCustom.astro";
+import CarouselClients from "@/components/CarouselClients.astro";
 ---
 
 <Layout title="MAY-PRO Inicio">
@@ -129,7 +130,7 @@ import ButtonCustom from "@/components/ButtonCustom.astro";
   </section>
 
   <section
-    class="px-4 mb-16 lg:px-0 lg:mb-24
+    class="px-4 mb-16 lg:px-0 lg:mb-32
     w-full flex justify-center overflow-hidden
     lg:relative lg:border-grey-4 lg:border-y-2"
   >
@@ -147,7 +148,7 @@ import ButtonCustom from "@/components/ButtonCustom.astro";
           tal y como lo has imaginado.
         </p>
 
-        <a href="/contacto" class="inline-block">
+        <a href="/contacto" class="inline-block mb-4">
           <ButtonCustom
             type="primary"
             text="Contactanos"
@@ -164,13 +165,13 @@ import ButtonCustom from "@/components/ButtonCustom.astro";
     />
   </section>
 
-  <section class="px-4 lg:px-0 container flex flex-col">
+  <section class="px-4 lg:px-0 container flex flex-col pb-24">
     <h2
-      class="font-title text-center text-grey-1 text-3xl lg:text-6xl lg:text-[4rem] mb-4 lg:mb-8"
+      class="font-title text-center text-grey-1 text-3xl lg:text-6xl lg:text-[4rem] mb-8 lg:mb-16"
     >
       Algunos de nuestros clientes
     </h2>
 
-    <br />
+    <CarouselClients id="clientes" />
   </section>
 </Layout>

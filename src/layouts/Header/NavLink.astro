@@ -7,7 +7,7 @@ type Props = {
 const { url, text } = Astro.props;
 ---
 
-<li class="text-grey-1 text-xl font-semibold">
+<li class="text-grey-1 text-xl font-title font-medium">
   <a id=`NavLink-${url}` href={url} class={` hover:text-primary-3`}>
     {text}
   </a>
