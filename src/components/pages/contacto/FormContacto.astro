@@ -11,7 +11,7 @@ const {} = Astro.props;
   id="my-form"
   action="https://formspree.io/f/xjkbakwj"
   method="POST"
-  class="flex flex-col bg-grey-6 py-16 px-8 w-full max-w-md border-2 border-black
+  class="flex flex-col bg-grey-6 py-16 px-8 w-full
     [&>label]:flex [&>label]:flex-col [&>label]:gap-1 [&>label]:w-full [&>label]:text-grey-1 [&>label]:mb-4
      [&_input]:bg-grey-5 [&_input]:p-4
      [&_textarea]:bg-grey-5 [&_textarea]:p-4"
@@ -90,8 +90,7 @@ const {} = Astro.props;
                 .map((error) => error["message"])
                 .join(", ");
             } else {
-              status.innerHTML =
-                "Oops! Algo salio mal, intenta mas tarde";
+              status.innerHTML = "Oops! Algo salio mal, intenta mas tarde";
             }
           });
         }

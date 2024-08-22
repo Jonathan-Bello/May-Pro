@@ -3,107 +3,141 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
 import imgContacto from "@/assets/img/home/contacto.webp";
+import svgDecoration from "@/assets/svg/decoration.svg";
 
 import FormContacto from "@/components/pages/contacto/FormContacto.astro";
 import CardDirectorio from "@/components/pages/contacto/CardDirectorio.astro";
 ---
 
 <Layout title="MAY-PRO Contacto">
-  <section
-    class="w-full h-svh relative
+  <div class="relative overflow-hidden">
+    <svg
+      class="absolute w-full md:w-auto -right-1/2 h-full top-0 lg:-right-1/4 xl:right-0 z-10"
+      viewBox="0 0 644 1464"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_2427_3127)">
+        <path
+          d="M49.4156 866.262L6.9541 787.737H94.7463L49.4156 866.262Z"
+          fill="#D82227"></path>
+        <path
+          d="M550.222 0H465.038L6.95386 787.737H95.6153L550.222 0Z"
+          fill="#701F23"></path>
+        <path
+          d="M447.763 1624L96 950.969L140.645 848L547 1624H447.763Z"
+          fill="#D82227"></path>
+        <path
+          d="M546.458 1624L144 855.151L191.798 752L645 1624H546.458Z"
+          fill="#701F23"></path>
+        <path d="M644.099 0H550.222L0 951.081H97.3537L644.099 0Z" fill="#AD2224"
+        ></path>
+        <path d="M448 1624L97.3913 951H0L354.957 1624H448Z" fill="#701F23"
+        ></path>
+      </g>
+      <defs>
+        <clipPath id="clip0_2427_3127">
+          <rect width="645" height="1464" fill="white"></rect>
+        </clipPath>
+      </defs>
+    </svg>
+
+    <section
+      class="w-full h-svh relative
     after:content-[''] after:absolute after:bg-primary-1 after:mix-blend-multiply
     after:w-full after:h-full after:top-0 after:left-0"
-  >
-    <Image
-      class="w-full h-full object-cover after:backdrop-blur"
-      src={imgContacto}
-      alt="banner"
-    />
-
-    <div
-      class="container px-4 py-8 w-full h-full
-     text-grey-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]
-     grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center"
     >
-      <div class="mb-8">
-        <h1
-          class="font-title font-normal mb-4 lg:mb-5 text-4xl md:text-5xl lg:text-6xl"
-        >
-          Optimiza tus procesos de construcción con MAY-PRO
-        </h1>
-        <p class="font-normal text-base lg:text-2xl">
-          Escríbenos tus dudas y comentarios sobre nuestros productos, a través
-          del siguiente formulario
-        </p>
+      <Image
+        class="w-full h-full object-cover after:backdrop-blur"
+        src={imgContacto}
+        alt="banner"
+      />
+
+      <div
+        class="container px-4 py-8 w-full h-full z-30
+     text-grey-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+     grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center"
+      >
+        <div class="mb-8">
+          <h1
+            class="font-title font-normal mb-4 lg:mb-5 text-4xl md:text-5xl lg:text-6xl"
+          >
+            Optimiza tus procesos de construcción con MAY-PRO
+          </h1>
+          <p class="font-normal text-base lg:text-2xl">
+            Escríbenos tus dudas y comentarios sobre nuestros productos, a
+            través del siguiente formulario
+          </p>
+        </div>
+
+        <div class="w-full max-w-md lg:max-w-lg lg:justify-self-end">
+          <FormContacto />
+        </div>
       </div>
+    </section>
 
-      <div class="lg:justify-self-end">
-        <FormContacto />
-      </div>
-    </div>
-  </section>
+    <section class="w-full h-[56rem] lg:h-[50rem] relative">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4085516103983!2d-99.19424891011072!3d19.43794451479147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d202069595e473%3A0xdb7d08f457533db9!2sAv.%20Ej%C3%A9rcito%20Nacional%20Mexicano%20598%2C%20Polanco%2C%20Col.%20Irrigaci%C3%B3n%2C%20Miguel%20Hidalgo%2C%2011560%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1724264151757!5m2!1ses!2smx"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen="true"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-  <section class="w-full h-[56rem] lg:h-[50rem] relative mb-20">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4085516103983!2d-99.19424891011072!3d19.43794451479147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d202069595e473%3A0xdb7d08f457533db9!2sAv.%20Ej%C3%A9rcito%20Nacional%20Mexicano%20598%2C%20Polanco%2C%20Col.%20Irrigaci%C3%B3n%2C%20Miguel%20Hidalgo%2C%2011560%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1724264151757!5m2!1ses!2smx"
-      width="100%"
-      height="100%"
-      style="border:0;"
-      allowfullscreen="true"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    <address
-      class="absolute w-full h-fit max-w-sm md:max-w-md lg:max-w-lg bg-grey-6 text-grey-1 py-6 px-2
+      <address
+        class="absolute w-full h-fit max-w-sm md:max-w-md lg:max-w-lg bg-grey-6 text-grey-1 py-6 px-2 z-30
       bottom-12 lg:bottom-auto left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:top-1/2 -translate-y-1/2 lg:right-[5%]
       [&_li]:flex [&_li]:items-center [&_li]:gap-2 lg:[&_li]:gap-4 [&_li]:mb-3
     [&_ul_i]:text-primary-4 [&_ul_i]:text-2xl [&_ul_i]:ml-2 lg:[&_ul_i]:text-3xl
       [&_a]:font-normal [&_a]:not-italic [&_a]:text-sm lg:[&_a]:text-base
       hover:[&_a]:border-b hover:[&_a]:border-grey-1"
-    >
-      <ul>
-        <li>
-          <i class="ri-map-pin-2-fill"></i>
-          <div>
+      >
+        <ul>
+          <li>
+            <i class="ri-map-pin-2-fill"></i>
+            <div>
+              <a
+                href="https://maps.app.goo.gl/nohqgkK5AvHv8pYZ6"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+              >
+                Ejercito Nacional Mexicano 598, int. PH, col. Polanco, CDMX C.P.
+                11560
+              </a>
+            </div>
+          </li>
+          <li>
+            <i class="ri-customer-service-fill"></i>
+            <a href="tel:+018000006541"> 01 800 000 6541 </a>
+          </li>
+          <li>
+            <i class="ri-phone-fill"></i>
+            <a href="tel:+525548116736"> +52 55 4811 6736 </a>
+          </li>
+          <li>
+            <i class="ri-whatsapp-fill"></i>
             <a
-              href="https://maps.app.goo.gl/nohqgkK5AvHv8pYZ6"
+              href="https://api.whatsapp.com/send/?phone=525593095960"
               target="_blank"
               rel="nofollow noopener noreferrer"
             >
-              Ejercito Nacional Mexicano 598, int. PH, col. Polanco, CDMX C.P.
-              11560
+              55 9309 5960
             </a>
-          </div>
-        </li>
-        <li>
-          <i class="ri-customer-service-fill"></i>
-          <a href="tel:+018000006541"> 01 800 000 6541 </a>
-        </li>
-        <li>
-          <i class="ri-phone-fill"></i>
-          <a href="tel:+525548116736"> +52 55 4811 6736 </a>
-        </li>
-        <li>
-          <i class="ri-whatsapp-fill"></i>
-          <a
-            href="https://api.whatsapp.com/send/?phone=525593095960"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-          >
-            55 9309 5960
-          </a>
-        </li>
-        <li>
-          <i class="ri-mail-fill"></i>
-          <a href="mailto:ventas@armaconcreto.com.mx">
-            ventas@armaconcreto.com.mx
-          </a>
-        </li>
-      </ul>
-    </address>
-  </section>
+          </li>
+          <li>
+            <i class="ri-mail-fill"></i>
+            <a href="mailto:ventas@armaconcreto.com.mx">
+              ventas@armaconcreto.com.mx
+            </a>
+          </li>
+        </ul>
+      </address>
+    </section>
+  </div>
 
-  <section class="container mb-20">
+  <section class="container my-20">
     <h2
       class="font-title font-normal text-grey-1 text-3xl lg:text-6xl mb-6 lg:mb-8"
     >
