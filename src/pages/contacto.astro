@@ -1,30 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import ItemList from "@/components/pages/home/ItemList.astro";
-import ProductCard from "@/components/ProductCard.astro";
-import FeatureCard from "@/components/FeatureCard.astro";
 
-import imgBolsasCemento from "@/assets/img/home/marcoCemento.webp";
 import imgContacto from "@/assets/img/home/contacto.webp";
-import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
-import imgMorteros from "@/assets/img/products/mortero.webp";
-import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
-import imgEstuco from "@/assets/img/products/estuco.webp";
-import imgBgAdhesivos from "@/assets/img/products/bgAdhesivos.webp";
-import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
 
-import svgBricks from "@/assets/svg/svgBricks.svg";
-import svgSpeed from "@/assets/svg/svgSpeed.svg";
-import svgMateriales from "@/assets/svg/svgMateriales.svg";
-import ButtonCustom from "@/components/ButtonCustom.astro";
-import CarouselClients from "@/components/CarouselClients.astro";
 import FormContacto from "@/components/pages/contacto/FormContacto.astro";
 ---
 
 <Layout title="MAY-PRO Contacto">
   <section
-    class="w-full h-svh mb-10 relative
+    class="w-full h-svh relative
     after:content-[''] after:absolute after:bg-primary-1 after:mix-blend-multiply
     after:w-full after:h-full after:top-0 after:left-0"
   >
@@ -36,7 +21,7 @@ import FormContacto from "@/components/pages/contacto/FormContacto.astro";
 
     <div
       class="container px-4 py-8 w-full h-full
-     text-grey-6 absolute top-0 left-0 z-[1]
+     text-grey-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]
      grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center"
     >
       <div class="mb-8">
@@ -51,7 +36,65 @@ import FormContacto from "@/components/pages/contacto/FormContacto.astro";
         </p>
       </div>
 
-      <FormContacto />
+      <div class="lg:justify-self-end">
+        <FormContacto />
+      </div>
     </div>
+  </section>
+
+  <section class="container h-[36rem] relative">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4085516103983!2d-99.19424891011072!3d19.43794451479147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d202069595e473%3A0xdb7d08f457533db9!2sAv.%20Ej%C3%A9rcito%20Nacional%20Mexicano%20598%2C%20Polanco%2C%20Col.%20Irrigaci%C3%B3n%2C%20Miguel%20Hidalgo%2C%2011560%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1724264151757!5m2!1ses!2smx"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen="true"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <address
+      class="absolute bg-grey-6 mx-4 bottom-12 py-6 px-2
+      [&_li]:flex [&_li]:items-center [&_li]:gap-2 [&_li]:mb-3
+    [&_ul_i]:text-primary-4 [&_ul_i]:text-2xl [&_ul_i]:ml-2
+      [&_ul_a]:inline-block [&_a]:text-sm m"
+    >
+      <ul>
+        <li>
+          <i class="ri-map-pin-2-fill"></i>
+          <a
+            href="https://maps.app.goo.gl/nohqgkK5AvHv8pYZ6"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            Ejercito Nacional Mexicano 598, int. PH, col. Polanco, CDMX C.P.
+            11560
+          </a>
+        </li>
+        <li>
+          <i class="ri-customer-service-fill"></i>
+          <a href="tel:+018000006541"> 01 800 000 6541 </a>
+        </li>
+        <li>
+          <i class="ri-phone-fill"></i>
+          <a href="tel:+525548116736"> +52 55 4811 6736 </a>
+        </li>
+        <li>
+          <i class="ri-whatsapp-fill"></i>
+          <a
+            href="https://api.whatsapp.com/send/?phone=525593095960"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            55 9309 5960
+          </a>
+        </li>
+        <li>
+          <i class="ri-mail-fill"></i>
+          <a href="mailto:ventas@armaconcreto.com.mx">
+            ventas@armaconcreto.com.mx
+          </a>
+        </li>
+      </ul>
+    </address>
   </section>
 </Layout>

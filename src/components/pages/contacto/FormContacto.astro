@@ -11,7 +11,7 @@ const {} = Astro.props;
   id="my-form"
   action="https://formspree.io/f/xjkbakwj"
   method="POST"
-  class="flex flex-col bg-grey-6 py-16 px-8 w-full max-w-md
+  class="flex flex-col bg-grey-6 py-16 px-8 w-full max-w-md border-2 border-black
     [&>label]:flex [&>label]:flex-col [&>label]:gap-1 [&>label]:w-full [&>label]:text-grey-1 [&>label]:mb-4
      [&_input]:bg-grey-5 [&_input]:p-4
      [&_textarea]:bg-grey-5 [&_textarea]:p-4"
@@ -47,13 +47,13 @@ const {} = Astro.props;
       placeholder="Ingresa tu nombre"
     />
   </label>
-  <label class="mb-4"
+  <label class="!mb-8"
     >Mensaje:
     <textarea name="mensaje" rows="4" required placeholder="Ingresa tu nombre"
     ></textarea>
   </label>
 
-  <button id="my-form-button">
+  <button id="my-form-button" class="mb-8">
     <ButtonCustom
       text="Enviar"
       type="primary"
@@ -61,7 +61,7 @@ const {} = Astro.props;
     />
   </button>
 
-  <p id="my-form-status"></p>
+  <p id="my-form-status" class="text-grey-1 text-center text-xl">Gracias, nos pondremos en contacto contigo</p>
 </form>
 
 <!-- Place this script at the end of the body tag -->
@@ -81,7 +81,7 @@ const {} = Astro.props;
     })
       .then((response) => {
         if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
+          status.innerHTML = "Gracias, nos pondremos en contacto contigo";
           form.reset();
         } else {
           response.json().then((data) => {
@@ -91,13 +91,13 @@ const {} = Astro.props;
                 .join(", ");
             } else {
               status.innerHTML =
-                "Oops! There was a problem submitting your form";
+                "Oops! Algo salio mal, intenta mas tarde";
             }
           });
         }
       })
       .catch((error) => {
-        status.innerHTML = "Oops! There was a problem submitting your form";
+        status.innerHTML = "Oops! Algo salio mal, intenta mas tarde";
       });
   }
   form.addEventListener("submit", handleSubmit);

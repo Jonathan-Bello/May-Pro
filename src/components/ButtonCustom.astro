@@ -31,7 +31,7 @@ const { type, text, iconClass } = Astro.props;
     </span>
     <div
       class:list={[
-        "parallelogram pl-4 pr-5 flex items-center justify-center",
+        "parallelogram px-4 flex items-center justify-center",
         {
           "bg-grey-6": type == "primary",
           "bg-primary-4": type == "secondary",
@@ -40,7 +40,7 @@ const { type, text, iconClass } = Astro.props;
     >
       <i
         class:list={[
-          `${iconClass} text-2xl -rotate-[120deg]`,
+          `${iconClass} text-2xl `,
           {
             "text-primary-4": type == "primary",
             "text-grey-6": type == "secondary",
