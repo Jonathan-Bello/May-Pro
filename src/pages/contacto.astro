@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import imgContacto from "@/assets/img/home/contacto.webp";
 
 import FormContacto from "@/components/pages/contacto/FormContacto.astro";
+import CardDirectorio from "@/components/pages/contacto/CardDirectorio.astro";
 ---
 
 <Layout title="MAY-PRO Contacto">
@@ -26,11 +27,11 @@ import FormContacto from "@/components/pages/contacto/FormContacto.astro";
     >
       <div class="mb-8">
         <h1
-          class="font-title font-normal mb-4 text-4xl md:text-5xl lg:text-6xl"
+          class="font-title font-normal mb-4 lg:mb-5 text-4xl md:text-5xl lg:text-6xl"
         >
           Optimiza tus procesos de construcción con MAY-PRO
         </h1>
-        <p class="text-base">
+        <p class="font-normal text-base lg:text-2xl">
           Escríbenos tus dudas y comentarios sobre nuestros productos, a través
           del siguiente formulario
         </p>
@@ -42,7 +43,7 @@ import FormContacto from "@/components/pages/contacto/FormContacto.astro";
     </div>
   </section>
 
-  <section class="w-full h-[56rem] lg:h-[50rem] relative">
+  <section class="w-full h-[56rem] lg:h-[50rem] relative mb-20">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.4085516103983!2d-99.19424891011072!3d19.43794451479147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d202069595e473%3A0xdb7d08f457533db9!2sAv.%20Ej%C3%A9rcito%20Nacional%20Mexicano%20598%2C%20Polanco%2C%20Col.%20Irrigaci%C3%B3n%2C%20Miguel%20Hidalgo%2C%2011560%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1724264151757!5m2!1ses!2smx"
       width="100%"
@@ -53,23 +54,26 @@ import FormContacto from "@/components/pages/contacto/FormContacto.astro";
       referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <address
-      class="absolute w-full h-fit max-w-sm md:max-w-md lg:max-w-lg bg-grey-6 py-6 px-2
+      class="absolute w-full h-fit max-w-sm md:max-w-md lg:max-w-lg bg-grey-6 text-grey-1 py-6 px-2
       bottom-12 lg:bottom-auto left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:top-1/2 -translate-y-1/2 lg:right-[5%]
       [&_li]:flex [&_li]:items-center [&_li]:gap-2 lg:[&_li]:gap-4 [&_li]:mb-3
     [&_ul_i]:text-primary-4 [&_ul_i]:text-2xl [&_ul_i]:ml-2 lg:[&_ul_i]:text-3xl
-      [&_ul_a]:inline-block [&_a]:font-normal [&_a]:not-italic [&_a]:text-sm lg:[&_a]:text-base"
+      [&_a]:font-normal [&_a]:not-italic [&_a]:text-sm lg:[&_a]:text-base
+      hover:[&_a]:border-b hover:[&_a]:border-grey-1"
     >
       <ul>
         <li>
           <i class="ri-map-pin-2-fill"></i>
-          <a
-            href="https://maps.app.goo.gl/nohqgkK5AvHv8pYZ6"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-          >
-            Ejercito Nacional Mexicano 598, int. PH, col. Polanco, CDMX C.P.
-            11560
-          </a>
+          <div>
+            <a
+              href="https://maps.app.goo.gl/nohqgkK5AvHv8pYZ6"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              Ejercito Nacional Mexicano 598, int. PH, col. Polanco, CDMX C.P.
+              11560
+            </a>
+          </div>
         </li>
         <li>
           <i class="ri-customer-service-fill"></i>
@@ -97,5 +101,46 @@ import FormContacto from "@/components/pages/contacto/FormContacto.astro";
         </li>
       </ul>
     </address>
+  </section>
+
+  <section class="container mb-20">
+    <h2
+      class="font-title font-normal text-grey-1 text-3xl lg:text-6xl mb-6 lg:mb-8"
+    >
+      Directorio
+    </h2>
+
+    <div class="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <CardDirectorio
+        title="Corporativo"
+        address="Urbina No.19 esq. San Luis Tlatilco Col. Parque Industrial Naucalpan, Naucalpan, Edo. de Mex. C.P. 53470."
+        tel="(55) 9149 8900"
+        callTel="01 800 000 6541."
+      />
+      <CardDirectorio
+        title="San Vicente Chicoloapan"
+        address="Carretera Chicoloapan - Coatepec Km 12, Camino a San Juan s/n, Ejido San Vicente Chicoloapan, Edo. Méx."
+        tel="(55) 4746 3000"
+      />
+      <CardDirectorio
+        title="Huehuetoca"
+        address="Av. Benigno Pérez s/n Col Ex Hacienda de Xalpa Mun. Huehuetoca Méx. En el Km 15 de la carretera Huehuetoca - Teoloyucan, Edo. Méx. C.P. 54680."
+        tel="(593) 9180791"
+      />
+      <CardDirectorio
+        title="Acapulco"
+        address="Carretera Nacional Acapulco Pinotepa km 30 Ejido Cerro de Piedras, Municipio de Acapulco de Juárez C.P. 39932."
+        tel="01 800 000 6541"
+      />
+      <CardDirectorio
+        title="Perote, Ver"
+        address="Carretera Frijol colorado, Junto a Banco de Tepezil la pirámide, Perote Veracruz. C.P. 91270."
+        tel="01 800 000 6541"
+      />
+      <CardDirectorio
+        title="Playa del Carmen"
+        address="Km 282 más 600 carretera Chetumal-Cancún, Playa del Carmen, Qroo C.P. 77710."
+      />
+    </div>
   </section>
 </Layout>

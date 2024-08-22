@@ -1,0 +1,24 @@
+---
+type Props = {
+  title: string;
+  address: string;
+  tel?: string;
+  callTel?: string;
+};
+
+const { title, address, tel, callTel } = Astro.props;
+---
+
+<article class="border-2 border-primary-3 p-4">
+  <h3 class="font-title font-medium text-grey-1 text-xl lg:text-3xl mb-4">{title}</h3>
+
+  <address class="text-grey-1 not-italic text-sm md:text-base flex flex-col gap-1">
+    <p>
+      {address}<p></p>
+    </p>
+    <>
+      {tel && <p>Tel: {tel}</p>}
+      {callTel && <p>Call Center: {callTel}</p>}
+    </>
+  </address>
+</article>
