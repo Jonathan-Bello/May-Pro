@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "@/components/ProductCard.astro";
+
+import logo from "@/assets/svg/logo-may-pro.svg";
+import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
+import imgMorteros from "@/assets/img/products/mortero.webp";
+import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
+import imgEstuco from "@/assets/img/products/estuco.webp";
+import imgBgAdhesivos from "@/assets/img/products/bgAdhesivos.webp";
+import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
+---
+
+<Layout title="MAY-PRO Contacto">
+  <section
+    class="w-full h-96 lg:h-[48rem] flex justify-center items-center bg-[#F6F6F6] mb-12"
+  >
+    <img
+      class="w-56 md:w-72 lg:w-96 xl:w-[36rem]"
+      src={logo.src}
+      alt="banner"
+    />
+  </section>
+
+  <!-- Productos -->
+  <section class="px-4 lg:px-0 container flex flex-col mb-14 md:mb-20 lg:mb-48">
+    <h1
+      class="font-title text-grey-1 text-center text-3xl lg:text-6xl lg:leading-[125%] font-normal"
+    >
+      Conoce los productos <br />
+      <span class="uppercase font-black text-primary-2">MAY-PRO</span>
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-5">
+      <ProductCard
+        title="Morteros secos premezclados"
+        imgBg={imgBgMorteros}
+        imgProduct={imgMorteros}
+        href="/productos/morteros-secos-premezclados"
+      />
+      <ProductCard
+        title="Estucos"
+        imgBg={imgBgEstucos}
+        imgProduct={imgEstuco}
+        href="/productos/estucos"
+      />
+      <ProductCard
+        title="Adhesivos"
+        imgBg={imgBgAdhesivos}
+        imgProduct={imgAdhesivos}
+        href="/productos/adhesivos"
+      />
+    </div>
+  </section>
+</Layout>
