@@ -1,0 +1,88 @@
+---
+type InfoSection = {
+  title: string;
+  content: string;
+};
+
+type Props = {
+  listContent: Array<InfoSection>;
+  classes?: string;
+};
+
+const { listContent, classes } = Astro.props;
+---
+
+<info-products-tab id="InfoProductsTab" class={`bg-grey-6 ${classes}`}>
+  <div class="flex tabs">
+    {
+      listContent.map((e) => (
+        <button
+          class="btnTab
+          flex-1 border-2 border-grey-4 px-1 py-2
+            text-grey-3 font-sans text-sm uppercase font-bold"
+          type="button"
+        >
+          {e.title}
+        </button>
+      ))
+    }
+  </div>
+
+  <div
+    class="border-2 border-t-0 border-grey-4 px-2 py-4 max-w-md md:max-w-lg
+  lg:max-w-lg xl:max-w-[36rem]"
+  >
+    {
+      listContent.map((e) => (
+        <div
+          class="tabPane hidden font-sans text-sm font-normal text-grey-3
+    [&>ul]:list-disc [&>ul]:ml-8 [&>li]:mb-1"
+          set:html={e.content}
+        />
+      ))
+    }
+  </div>
+</info-products-tab>
+
+<style>
+  .btnTab.active {
+    @apply border-primary-3 text-primary-3;
+  }
+
+  .tabPane.active {
+    @apply block;
+  }
+</style>
+
+<script>
+  class InfoProductsTab extends HTMLElement {
+    constructor() {
+      super();
+
+      const buttonsTabs = this.querySelectorAll(".btnTab");
+      const panesTabs = this.querySelectorAll(".tabPane");
+
+      buttonsTabs[0].classList.add("active");
+      panesTabs[0].classList.add("active");
+
+      buttonsTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          if (!tab.classList.contains("active")) {
+            const activeTab = this.querySelector(".btnTab.active");
+            const activePane = this.querySelector(".tabPane.active");
+
+            activeTab.classList.remove("active");
+            activePane.classList.remove("active");
+
+            const targetIndex = Array.from(buttonsTabs).indexOf(tab);
+            const targetPane = panesTabs[targetIndex];
+
+            tab.classList.add("active");
+            targetPane.classList.add("active");
+          }
+        });
+      });
+    }
+  }
+  customElements.define("info-products-tab", InfoProductsTab);
+</script>
