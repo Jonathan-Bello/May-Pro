@@ -1,0 +1,184 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ProductCard from "@/components/ProductCard.astro";
+import ButtonCustom from "@/components/ButtonCustom.astro";
+import InfoProductsTab from "@/components/pages/products/InfoProductsTab.astro";
+
+import logo from "@/assets/svg/logo-may-pro.svg";
+import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
+import imgMorteros from "@/assets/img/products/mortero.webp";
+import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
+import imgEstuco from "@/assets/img/products/estuco.webp";
+import imgBgAdhesivos from "@/assets/img/products/bgAdhesivos.webp";
+import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
+
+import imgAdhesivoBlanco from "@/assets/img/products/adhesivos/adhesivoBlanco.webp";
+import imgAdhesivoPlata from "@/assets/img/products/adhesivos/adhesivoPlata.webp";
+import imgAdhesivoBanner from "@/assets/img/products/adhesivos/adhesivoBanner.webp";
+---
+
+<Layout title="Estucos">
+  <section
+    class="w-full h-96 lg:h-[48rem] flex justify-center items-center bg-[#F6F6F6] mb-12"
+  >
+    <img
+      class="w-56 md:w-72 lg:w-96 xl:w-[36rem]"
+      src={logo.src}
+      alt="banner"
+    />
+  </section>
+
+  <section class="px-4 lg:px-0 container flex flex-col mb-14 md:mb-20 lg:mb-48">
+    <h2
+      class="font-title text-grey-1 text-center text-3xl lg:text-6xl lg:leading-[125%] font-normal"
+    >
+      Conoce los productos <br />
+      <span class="uppercase font-black text-primary-2">MAY-PRO</span>
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-5">
+      <ProductCard
+        title="Morteros secos premezclados"
+        imgBg={imgBgMorteros}
+        imgProduct={imgMorteros}
+        href="/productos/morteros-secos-premezclados"
+      />
+      <ProductCard
+        title="Estucos"
+        imgBg={imgBgEstucos}
+        imgProduct={imgEstuco}
+        href="/productos/estucos"
+      />
+      <ProductCard
+        title="Adhesivos"
+        imgBg={imgBgAdhesivos}
+        imgProduct={imgAdhesivos}
+        href="/productos/adhesivos"
+        selected
+      />
+    </div>
+  </section>
+
+  <!-- Title -->
+  <section
+    class="px-4 lg:px-0 container mb-12 lg:mb-16 xl:mb-20 flex flex-col items-center"
+  >
+    <h1
+      class="text-grey-2 text-center font-title text-4xl text-[2rem] lg:text-5xl lg:text-[3.25rem] font-normal mb-4 lg:mb-6"
+    >
+      Adhesivos
+    </h1>
+    <p
+      class="text-grey-2 text-center font-sans text-sm lg:text-xl lg:max-w-6xl"
+    >
+      Los adhesivos MAY-PRO son una línea de materiales especializados para
+      recubrimiento de alta o media absorción de agua. Es un material muy
+      versátil, de fácil aplicación y muy durable.
+    </p>
+  </section>
+
+  <!-- Product 1 -->
+  <section
+    class="w-full relative grid grid-cols-1 lg:grid-cols-2 justify-center mb-14 lg:mb-40"
+  >
+    <h2
+      class="bg-primary-2 text-grey-6 p-4 lg:py-8 font-title font-medium text-xl lg:text-4xl mb-4
+      flex justify-center lg:inline-flex z-[21] lg:text-center"
+    >
+      <div class="container">Estuco</div>
+    </h2>
+
+    <div></div>
+
+    <div></div>
+
+    <div
+      class="grid justify-center z-[21] lg:absolute lg:top-32 lg:left-12 xl:left-[4%] 2xl:left-[9%]"
+    >
+      <div class="px-4 lg:px-0 container flex flex-col mb-14">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <article class="flex flex-col items-center">
+            <Image
+              class="w-32 mb-4"
+              src={imgAdhesivoBlanco}
+              alt="Adhesivo blanco"
+            />
+            <h3 class="font-sans font-semibold text-base text-center uppercase">
+              ADHESIVO BLANCO
+            </h3>
+          </article>
+          <article class="flex flex-col items-center">
+            <Image
+              class="w-32 mb-4"
+              src={imgAdhesivoPlata}
+              alt="Adhesivo plata"
+            />
+            <h3 class="font-sans font-semibold text-base text-center uppercase">
+              Adhesivo plata
+            </h3>
+          </article>
+        </div>
+
+        <InfoProductsTab
+          classes="mb-6"
+          listContent={[
+            {
+              title: "DESCRIPCIÓN",
+              content:
+                "Mortero adhesivo de granulometría controlada de tamaño semifino y aditivos especiales que brindan una gran adhesividad, retención de agua y facilidad de aplicación.  Ideal para recámaras, cocinas y baños.",
+            },
+            {
+              title: "BENEFICIOS",
+              content: `<ul>
+                <li>Resistencia a la humedad</li>
+                <li>Recomendado para pisos y muros</li>
+                <li>Fácil preparación y aplicación</li>
+                <li>Excelentes valores de ajustabilidad, tiempo abierto y tiempo de vida</li>
+                <li>Óptima adherencia</li>
+                <li>Resistencias físicas superiores a la Norma ANSI 118.1</li>
+                </ul>
+                `,
+            },
+          ]}
+        />
+
+        <ButtonCustom
+          text="Descargar fichas técnicas"
+          iconClass="ri-arrow-down-s-line"
+          type="secondary"
+        />
+      </div>
+    </div>
+
+    <svg
+      class="hidden lg:block absolute h-full left-1/2 -translate-x-1/2 z-10"
+      width="460"
+      height="800"
+      viewBox="0 0 460 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M231.261 0H-6.55651e-07L224.91 800H460L231.261 0Z" fill="#AD2224"
+      ></path>
+    </svg>
+
+    <div class="w-full bg-primary-2 pb-16 lg:pb-24 flex justify-end z-0">
+      <Image
+        class="imgPoly object-cover"
+        src={imgAdhesivoBanner}
+        alt="bloques"
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .imgPoly {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+  }
+
+  .imgPolyReverse {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+  }
+</style>
