@@ -33,7 +33,7 @@ const { imgBg, title, imgProduct, href, selected } = Astro.props;
     {title}
   </h3>
   <Image
-    class="z-10 w-24 md:w-28 lg:w-24 xl:w-32 my-12 lg:my-20 xl:my-12 mr-4 lg:mr-2"
+    class:list={["z-10 w-24 md:w-28 lg:w-24 xl:w-32 my-12 lg:my-20 xl:my-12 mr-4 lg:mr-2", {"scale-110": selected}]}
     src={imgProduct}
     alt="img"
   />

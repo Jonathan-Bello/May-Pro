@@ -1,0 +1,363 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import ProductCard from "@/components/ProductCard.astro";
+import ButtonCustom from "@/components/ButtonCustom.astro";
+import InfoProductsTab from "@/components/pages/products/InfoProductsTab.astro";
+
+import logo from "@/assets/svg/logo-may-pro.svg";
+import imgBgMorteros from "@/assets/img/products/bgMorteros.webp";
+import imgMorteros from "@/assets/img/products/mortero.webp";
+import imgBgEstucos from "@/assets/img/products/bgEstucos.webp";
+import imgEstuco from "@/assets/img/products/estuco.webp";
+import imgBgAdhesivos from "@/assets/img/products/bgAdhesivos.webp";
+import imgAdhesivos from "@/assets/img/products/adhesivo.webp";
+
+import imgAplanadoBlanco from "@/assets/img/products/estucos/aplanadoBlanco.webp";
+import imgAplanadoBlancoBanner from "@/assets/img/products/estucos/aplanadoBlancoBanner.webp";
+import imgEstucoProduct from "@/assets/img/products/estucos/estuco.webp";
+import imgEstucoBanner from "@/assets/img/products/estucos/estucoBanner.webp";
+import imgPastaFina from "@/assets/img/products/estucos/pastaFina.webp";
+import imgPastaFinaBanner from "@/assets/img/products/estucos/pastaFinaBanner.webp";
+---
+
+<Layout title="Estucos">
+  <section
+    class="w-full h-96 lg:h-[48rem] flex justify-center items-center bg-[#F6F6F6] mb-12"
+  >
+    <img
+      class="w-56 md:w-72 lg:w-96 xl:w-[36rem]"
+      src={logo.src}
+      alt="banner"
+    />
+  </section>
+
+  <section class="px-4 lg:px-0 container flex flex-col mb-14 md:mb-20 lg:mb-48">
+    <h2
+      class="font-title text-grey-1 text-center text-3xl lg:text-6xl lg:leading-[125%] font-normal"
+    >
+      Conoce los productos <br />
+      <span class="uppercase font-black text-primary-2">MAY-PRO</span>
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-5">
+      <ProductCard
+        title="Morteros secos premezclados"
+        imgBg={imgBgMorteros}
+        imgProduct={imgMorteros}
+        href="/productos/morteros-secos-premezclados"
+      />
+      <ProductCard
+        title="Estucos"
+        imgBg={imgBgEstucos}
+        imgProduct={imgEstuco}
+        href="/productos/estucos"
+        selected
+      />
+      <ProductCard
+        title="Adhesivos"
+        imgBg={imgBgAdhesivos}
+        imgProduct={imgAdhesivos}
+        href="/productos/adhesivos"
+      />
+    </div>
+  </section>
+
+  <!-- Title -->
+  <section
+    class="px-4 lg:px-0 container mb-12 lg:mb-16 xl:mb-20 flex flex-col items-center"
+  >
+    <h1
+      class="text-grey-2 text-center font-title text-4xl text-[2rem] lg:text-5xl lg:text-[3.25rem] font-normal mb-4 lg:mb-6"
+    >
+      Estuco
+    </h1>
+    <p
+      class="text-grey-2 text-center font-sans text-sm lg:text-xl lg:max-w-6xl"
+    >
+      Los estucos de MAY-PRO son materiales especializados ideales para obtener
+      un acabado estético y elegante en superficies de mampostería,
+      estructurales o decoración. Para usarlos, solo es necesario agregar agua
+      para obtener su versatilidad y durabilidad.
+    </p>
+  </section>
+
+  <!-- Product 1 -->
+  <section
+    class="w-full relative grid grid-cols-1 lg:grid-cols-2 justify-center mb-14 lg:mb-40"
+  >
+    <h2
+      class="bg-primary-2 text-grey-6 p-4 lg:py-8 font-title font-medium text-xl lg:text-4xl mb-4
+      flex justify-center lg:inline-flex z-[21] lg:text-center"
+    >
+      <div class="container">Estuco</div>
+    </h2>
+
+    <div></div>
+
+    <div></div>
+
+    <div
+      class="grid justify-center z-[21] lg:absolute lg:top-32 lg:left-12 xl:left-[4%] 2xl:left-[9%]"
+    >
+      <div class="px-4 lg:px-0 container flex flex-col mb-14">
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <article class="flex flex-col items-center">
+            <Image class="w-32 mb-4" src={imgEstucoProduct} alt="Estuco" />
+            <p class="font-sans font-semibold text-sm text-center">
+              Recubrimiento en polvo
+            </p>
+          </article>
+        </div>
+
+        <InfoProductsTab
+          classes="mb-6"
+          listContent={[
+            {
+              title: "DESCRIPCIÓN",
+              content:
+                "Polvo compuesto por cemento blanco Portland, cargas minerales, y aditivos químicos. <br/> Ideal para dar acabados y texturas finales.",
+            },
+            {
+              title: "SUPERFICIES",
+              content: `<ul>
+                <li>Muros de block</li>
+                <li>Revoques de cemento</li>
+                <li>Aplanado de cemento-cal</li>
+                <li>Placas de cemento</li>
+                <li>Placas de concreto</li>
+                </ul>
+                `,
+            },
+            {
+              title: "BENEFICIOS",
+              content: `<ul>
+                <li>Fácil de trabajar y aplicar</li>
+                <li>Para uso en interiores y exteriores</li>
+                <li>Listo para usarse</li>
+                <li>Mayor velocidad en la construcción</li>
+                </ul>
+                `,
+            },
+          ]}
+        />
+
+        <ButtonCustom
+          text="Descargar fichas técnicas"
+          iconClass="ri-arrow-down-s-line"
+          type="secondary"
+        />
+      </div>
+    </div>
+
+    <svg
+      class="hidden lg:block absolute h-full left-1/2 -translate-x-1/2 z-10"
+      width="460"
+      height="800"
+      viewBox="0 0 460 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M231.261 0H-6.55651e-07L224.91 800H460L231.261 0Z" fill="#AD2224"
+      ></path>
+    </svg>
+
+    <div class="w-full bg-primary-2 pb-16 lg:pb-24 flex justify-end z-0">
+      <Image class="imgPoly object-cover" src={imgEstucoBanner} alt="bloques" />
+    </div>
+  </section>
+
+  <!-- Product 2 -->
+  <section
+    class="w-full relative grid grid-cols-1 lg:grid-cols-2 justify-center mb-14 lg:mb-40"
+  >
+    <h2
+      class="bg-primary-2 text-grey-6 p-4 lg:py-8 font-title font-medium text-xl lg:text-4xl mb-4
+    flex justify-center lg:inline-flex z-[21] lg:text-center lg:-order-1"
+    >
+      <div class="container">Estuco</div>
+    </h2>
+
+    <div class="lg:-order-2"></div>
+    <div class="lg:order-1"></div>
+
+    <div
+      class="grid justify-center z-[21] lg:absolute lg:top-32 lg:right-12 xl:right-[4%] 2xl:right-[9%]"
+    >
+      <div class="px-4 lg:px-0 container flex flex-col mb-14">
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <article class="flex flex-col items-center">
+            <Image
+              class="w-32 mb-4"
+              src={imgAplanadoBlanco}
+              alt="Aplanado Blanco"
+            />
+            <p class="font-sans font-semibold text-sm text-center">
+              Aplanado blanco
+            </p>
+          </article>
+        </div>
+
+        <InfoProductsTab
+          classes="mb-6"
+          listContent={[
+            {
+              title: "DESCRIPCIÓN",
+              content:
+                "Mezcla de cemento Portland, pigmentos especiales, refuerzos poliorientados, aditivos para el fraguado y agregados con granulometría controlada.",
+            },
+            {
+              title: "SUPERFICIE",
+              content: `Apto para muros de:
+                <ul>
+                    <li>Concreto</li>
+                    <li>Tabicón</li>
+                    <li>Ladrillo</li>
+                    <li>La superficie debe de estar libre de pintura, polvo o empastes de yeso.</li>
+                </ul>
+            `,
+            },
+            {
+              title: "BENEFICIOS",
+              content: `<ul>
+                <li>Mayor velocidad de construcción</li>
+                <li>Minimiza agrietamientos</li>
+                <li>Acabado fino</li>
+                <li>Excelente adherencia</li>
+                <li>Reduce el esfuerzo en la aplicación</li>
+                </ul>
+            `,
+            },
+          ]}
+        />
+        <ButtonCustom
+          text="Descargar fichas técnicas"
+          iconClass="ri-arrow-down-s-line"
+          type="secondary"
+        />
+      </div>
+    </div>
+
+    <div
+      class="w-full bg-primary-2 pb-16 lg:pb-24 flex justify-end z-0 -scale-x-100"
+    >
+      <Image
+        class="imgPoly object-cover"
+        src={imgAplanadoBlancoBanner}
+        alt="cemento"
+      />
+    </div>
+
+    <svg
+      class="hidden lg:block absolute h-full left-1/2 -translate-x-1/2 z-10 -scale-x-100"
+      width="460"
+      height="800"
+      viewBox="0 0 460 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M231.261 0H-6.55651e-07L224.91 800H460L231.261 0Z" fill="#AD2224"
+      ></path>
+    </svg>
+  </section>
+
+  <!-- Product 3 -->
+  <section
+    class="w-full relative grid grid-cols-1 lg:grid-cols-2 justify-center mb-14 lg:mb-40"
+  >
+    <h2
+      class="bg-primary-2 text-grey-6 p-4 lg:py-8 font-title font-medium text-xl lg:text-4xl mb-4
+      flex justify-center lg:inline-flex z-[21] lg:text-center"
+    >
+      <div class="container">Pasta fina</div>
+    </h2>
+
+    <div></div>
+
+    <div></div>
+
+    <div
+      class="grid justify-center z-[21] lg:absolute lg:top-32 lg:left-12 xl:left-[4%] 2xl:left-[9%]"
+    >
+      <div class="px-4 lg:px-0 container flex flex-col mb-14">
+        <div class="grid grid-cols-1 gap-4 mb-6">
+          <article class="flex flex-col items-center">
+            <Image class="w-32 mb-4" src={imgPastaFina} alt="Pasta Fina" />
+          </article>
+        </div>
+
+        <InfoProductsTab
+          classes="mb-6"
+          listContent={[
+            {
+              title: "DESCRIPCIÓN",
+              content:
+                "Es un recubrimiento en polvo, compuesto por cemento Portland, agregados minerales de granulometria controlada y aditivos químicos.",
+            },
+            {
+              title: "SUPERFICIES",
+              content: `<ul>
+                <li>Muros de block</li>
+                <li>Revoque de cemento</li>
+                <li>Aplanado de cemento-cal</li>
+                <li>Placas de cemento, concreto, etc.</li>
+                </ul>
+                `,
+            },
+            {
+              title: "BENEFICIOS",
+              content: `<ul>
+                <li>Fácil de trabajar</li>
+                <li>Ideal para dejar un acabado blanco extra fino y liso tipo yeso</li>
+                <li>Útil en cualquier tipo de superficies</li>
+                </ul>
+                `,
+            },
+          ]}
+        />
+
+        <ButtonCustom
+          text="Descargar fichas técnicas"
+          iconClass="ri-arrow-down-s-line"
+          type="secondary"
+        />
+      </div>
+    </div>
+
+    <svg
+      class="hidden lg:block absolute h-full left-1/2 -translate-x-1/2 z-10"
+      width="460"
+      height="800"
+      viewBox="0 0 460 800"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M231.261 0H-6.55651e-07L224.91 800H460L231.261 0Z" fill="#AD2224"
+      ></path>
+    </svg>
+
+    <div class="w-full bg-primary-2 pb-16 lg:pb-24 flex justify-end z-0">
+      <Image
+        class="imgPoly object-cover"
+        src={imgPastaFinaBanner}
+        alt="bloques"
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .imgPoly {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+  }
+
+  .imgPolyReverse {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 15% 100%);
+  }
+
+  /* @media (width > 1024px) {
+    .imgPoly {
+      clip-path: polygon(3% 0, 100% 0%, 100% 100%, 20% 100%);
+    }
+  } */
+</style>
