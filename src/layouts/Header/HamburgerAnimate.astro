@@ -49,9 +49,11 @@ const { bgColor, color } = Astro.props;
 </button>
 
 <script>
-  const btnHamburger = document.getElementById("hamburger-btn");
+  document.addEventListener("astro:page-load", () => {
+    const btnHamburger = document.getElementById("hamburger-btn");
 
-  btnHamburger?.addEventListener("click", () => {
-    btnHamburger.classList.toggle("actived");
+    btnHamburger?.addEventListener("click", () => {
+      btnHamburger.classList.toggle("actived");
+    });
   });
 </script>
