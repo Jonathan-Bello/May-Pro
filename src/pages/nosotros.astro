@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+
+import imgCostales from "@/assets/img/nosotros/costales.webp";
+---
+
+<Layout title="MAY-PRO Contacto">
+  <section
+    class="banner w-full h-svh lg:h-[48rem] relative
+    after:content-[''] after:absolute after:bg-primary-3 after:mix-blend-multiply
+    after:w-full lg:after:w-1/2 xl:after:w-2/3 after:h-1/3 md:after:h-2/5 lg:after:h-full
+    after:bottom-0 lg:after:bottom-auto after:left-0 lg:after:left-auto lg:after:right-0"
+  >
+    <div
+      class="container px-4 py-4 lg:p-0 w-full h-full z-30
+     text-grey-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+     grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center"
+    >
+      <div class="pr-12">
+        <h1
+          class="font-title font-normal mb-4 lg:mb-12 text-3xl md:text-4xl lg:text-[2.75rem] lg:leading-[3.25rem]"
+        >
+          Construyendo una historia en la construcción
+        </h1>
+        <p class="font-normal text-sm md:text-base lg:text-xl">
+          MAY-PRO es una línea de materiales especializados para el pegado y
+          acabado de superficies de mampostería, estructurales y de decoración.
+          <br />
+          <br />
+          Pertenecemos a grupo ARMACON, empresa especializada en la fabricación,
+          comercialización y distribución de materiales para la construcción. Por
+          lo que, todos nuestros productos cuentan con un elevado estándar de calidad
+          y normas técnicas vigentes.
+          <br />
+          <br />
+          Ofrecemos los materiales más versátiles y de fácil aplicación, que garantizan
+          la durabilidad y acabados profesionales en cualquier proyecto.
+        </p>
+      </div>
+
+      <div class="w-full max-w-md lg:max-w-2xl xl:max-w-4xl 2xl:max-w-5xl lg:justify-self-end">
+        <Image src={imgCostales} alt="Costales" />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .banner::after {
+    clip-path: polygon(0 0, 100% 50%, 100% 100%, 0% 100%);
+  }
+
+  @media (width > 1024px) {
+    .banner::after {
+      clip-path: polygon(40% 0, 100% 0, 100% 100%, 15% 100%);
+    }
+  }
+</style>
