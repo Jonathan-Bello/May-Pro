@@ -1,4 +1,5 @@
 ---
+import BtnWhatsapp from "./BtnWhatsapp.astro";
 import Footer from "./Footer.astro";
 import Header from "./Header/Header.astro";
 import { ViewTransitions } from "astro:transitions";
@@ -36,6 +37,7 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <BtnWhatsapp />
   </body>
 
   <style is:global>
